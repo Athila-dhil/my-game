@@ -70,8 +70,8 @@ while run:
             playerX_change=5
         if event.type==pygame.K_SPACE:
             if knife_state == "ready":
-                hitsound=mixer.music.load(r'C:\Users\salam\Desktop\my game\knife.mp3')
-                hitsound.play(1)
+                hitsound=pygame.mixer.Sound(r'C:\Users\salam\Desktop\my game\knife.mp3')
+                pygame.mixer.Sound.play(hitsound)
                 knifeX=playerX
                 hit_knife(knifeX,knifeY)
     if event.type==pygame.K_UP:
@@ -97,8 +97,8 @@ for i in range(num_of_enemies):
         enemyY[i] += enemyY_change[i]
     collision= checkcollision(enemyX[i],enemyY[i],knifeX,knifeY)
     if collision:
-        stabsound = mixer.music.load(r'C:\Users\salam\Desktop\my game\stab.mp3')
-        stabsound.play()
+        stabsound = pygame.mixer.Sound(r'C:\Users\salam\Desktop\my game\stab.mp3')
+        pygame.mixer.Sound.play(stabsound)
         knifeY=400
         knife_state="ready"
         Score_val +=1
